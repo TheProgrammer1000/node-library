@@ -15,5 +15,19 @@
     </header>
     <main></main>
     <footer></footer>
+
+    <script>
+      console.log('window.location.origin: ', window.location.origin);
+
+      fetch(`http://localhost:5000/`, {
+        method: 'POST',
+
+        headers: {
+          'Content-Type': 'application/json'
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: JSON.stringify({ url_origin: window.location.origin }) // body data type must match "Content-Type" header
+      }).then((reponse) => console.log(reponse));
+    </script>
   </body>
 </html>
