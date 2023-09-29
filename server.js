@@ -18,6 +18,15 @@ app.get('/secound', (req, res) => {
   res.sendFile('public/secound.html', { root: __dirname });
 });
 
+/* Get all the routes from Node.JS!! */
+const router = express.Router();
+
+app._router.stack.forEach(function (r) {
+  if (r.route && r.route.path) {
+    console.log(r.route.path);
+  }
+});
+
 app.listen(port, () => {
   console.log(`Listening to port ${port}`);
 });

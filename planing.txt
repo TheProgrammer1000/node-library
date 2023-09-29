@@ -1,0 +1,5 @@
+Commands:
+wget -r -l0 www.oldsite.com (This will download all the url)
+find www.oldsite.com would (Here you will find all the url path)
+
+reveal all urls, I believe.
