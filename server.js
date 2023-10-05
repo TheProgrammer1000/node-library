@@ -139,3 +139,60 @@ db.query('SELECT * FROM user_navigation', function (err, result, fields) {
   console.log(result[0].click);
 });
 */
+
+
+// Checka denna!
+
+/*
+const video_slider_wrap = document.querySelector('.video-slider-wrap');
+console.log('video_slider_wrap: ', video_slider_wrap);
+
+let divArray = [];
+
+const links = video_slider_wrap.querySelectorAll('a');
+console.log('links: ', links);
+
+let divElement = document.createElement('div');
+fetch(links[0].href)
+.then((response) => response.text())
+.then((html) => {
+divElement.innerHTML = html;
+
+console.log('links[0].href: ', links[0].href);
+
+let divElementSplit = divElement.innerHTML.split('\n');
+
+// Removing blank space
+for (let i = 0; i < divElementSplit.length; i++) {
+if (divElementSplit[i] === '' || divElementSplit[i] === '\t') {
+divElementSplit.splice(i, 1);
+}
+}
+
+//Checking where the head-element is at
+for (let i = 0; i < divElementSplit.length; i++) {
+console.log('divElementSplit[i]: ', divElementSplit[i]);
+if (divElementSplit[i].includes('<head>')) {
+console.log('DET FINNS');
+//console.log('i: ', i);
+//console.log('divElementSplit[i]', divElementSplit[i]);
+//console.log('Yes det finns en head-elemenet');
+}
+}
+
+// Checking if the are any divs
+for (let i = 0; i < divElementSplit.length; i++) {
+if (divElementSplit[i].includes('<div')) {
+//console.log(divElementSplit[i]);
+if (divElementSplit[i].includes('class="*"')) {
+//console.log('JA classer finns!');
+}
+if (divElementSplit[i].includes('id="*"')) {
+//console.log('JA id finns!');
+}
+}
+}
+
+//console.log('divElementSplit: ', divElementSplit);
+});
+*/
