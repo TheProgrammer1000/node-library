@@ -14,15 +14,12 @@ app.use(
   })
 );
 
-/* Get all the routes from Node.JS!! */
 
-//const router = express.Router();
-
-//const { app, router } = require('./config/startup.js');
 const { db } = require('./config/config.js');
 
 const fs = require('fs');
 const axios = require('axios');
+
 
 function initUrl() {
   const childProcess = require('child_process');
@@ -51,6 +48,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/', (req, res) => {
+
   console.log(req.body.url_origin);
 
   if (req.body.url_origin !== '' && count !== 1) {
@@ -86,60 +84,9 @@ app.get('/secound', (req, res) => {
   res.sendFile('public/secound.html', { root: __dirname });
 });
 
-/*
-const getAllPaths = () => {
-  let routePaths = [];
-  app._router.stack.forEach(function (r) {
-    if (r.route && r.route.path) {
-      routePaths.push(r.route.path);
-      console.log('r.route.path: ', r.route.path);
-    }
-  });
-  return routePaths;
-};
-
-console.log(getAllPaths());
-*/
-
-/*
-fetch(`http://localhost:5001${r.route.path}`)
-  .then(function (response) {
-    // The API call was successful!
-    return response.text();
-  })
-  .then(function (html) {
-    // This is the HTML from our response as a text string
-    //console.log(html);
-    // Convert the HTML string into a document object
-
-          //const parser = new DOMParser();
-          //const doc = parser.parseFromString(html, 'text/html');
-
-    //console.log('doc: ', doc);
-  })
-  .catch(function (err) {
-    // There was an error
-    console.warn('Something went wrong.', err);
-  });
-*/
-/*
-const getAllPaths = require('./divFunctions/getAllPaths.js');
-
-console.log(getAllPaths());
-
-//console.log(allPathsArray);
-*/
 app.listen(5000, () => {
   console.log(`Listening to port 5000`);
 });
-
-/*
-db.query('SELECT * FROM user_navigation', function (err, result, fields) {
-  if (err) throw err;
-  console.log(result[0].click);
-});
-*/
-
 
 // Checka denna!
 
