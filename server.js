@@ -1,7 +1,112 @@
-const express = require('express');
+import express from 'express'
 const app = express();
-const cors = require('cors');
 
+import cors from 'cors'
+import fs from 'fs'
+import got from 'got';
+
+import axios from 'axios';
+import { JSDOM } from 'jsdom';
+
+
+async function GetWebsite() {
+
+// Specify the URL of the web page you want to fetch
+const url = 'https://www.thornior.com/';
+
+axios.get(url,
+  {maxRedirects: 0,
+  })
+  .then((response) => {
+    if (response.status === 200) {
+      // The request was successful, and you can access the HTML content in response.data.
+      const html = response.data;
+
+      // Create a JSDOM instance to parse the HTML content
+      const { window } = new JSDOM(html);
+      const document = window.document;
+
+      // Access the <html> element
+      const htmlElement = document.documentElement;
+
+      // Get the entire HTML structure including the closing </body> and </html> tags
+      const fullHtml = htmlElement.outerHTML;
+
+         // Write HTML content to an HTML file
+         fs.writeFile('index.html', fullHtml, (err) => {
+          if (err) {
+            console.error('Error writing HTML file:', err);
+          } else {
+            console.log('HTML file created successfully.');
+          }
+        });
+
+    } else {
+      console.error('Failed to fetch the web page.');
+    }
+  })
+  .catch((error) => {
+    console.error('An error occurred:', error);
+  });
+}
+
+GetWebsite();
+
+import puppeteer from 'puppeteer';
+
+(async () => {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+
+  await page.goto('https://www.thornior.com/');
+
+  // Wait for the 'link' elements to appear on the page
+  await page.waitForSelector('link[rel="stylesheet"]');
+
+  const linkElements = await page.$$eval('link[rel="stylesheet"]', (links) => {
+    return links.map((link) => link.href);
+  });
+
+  console.log(linkElements[1]);
+  for (let i = 0; i < linkElements.length; i++) {
+    // Hard-coded!
+    if(linkElements[i].includes('style.css') || linkElements[i].includes('screen.css') || linkElements[i].includes('styles.css')) {
+      console.log('linkElements[i]: ', linkElements[i]);
+      console.log("Sant")
+
+      axios.get(linkElements[i])
+      .then((response) => {
+        if (response.status === 200) {
+          // The request was successful, and you can access the HTML content in response.data.
+          const cssContent = response.data;
+
+          // Write CSS content to a CSS file
+          fs.writeFile('styles.css', cssContent, (err) => {
+            if (err) {
+              console.error('Error writing CSS file:', err);
+            } else {
+              console.log('CSS file created successfully.');
+            }
+          });
+
+        }
+      })
+    }
+
+  }
+
+  await browser.close();
+
+
+})();
+
+/*
+got("https://www.travankan.se/test/Test/index.html").then(result => {
+    console.log(result);
+}).catch(err => {
+    console.log(err);
+});
+*/
 let count = 0;
 
 // inside public directory.
@@ -15,10 +120,8 @@ app.use(
 );
 
 
-const { db } = require('./config/config.js');
+//import {db} from './config/config.js'
 
-const fs = require('fs');
-const axios = require('axios');
 
 
 function initUrl() {

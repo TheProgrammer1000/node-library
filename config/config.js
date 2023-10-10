@@ -9,6 +9,7 @@ const db = mysql.createConnection({
 try {
   db.connect();
   module.exports = { db };
+
 } catch (error) {
   console.log(error.message);
 }
