@@ -1,0 +1,242 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="HandheldFriendly" content="true">
+<link rel="shortcut icon" href="images/favicon.ico">
+<title></title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/checkbox.css">
+<script src="script/jquery.min.js"></script>
+<script src="script/bootstrap.min.js"></script>
+<script src="script/bootbox.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/font.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<script type="text/javascript" src="script/jquery-ui.js"></script>
+<link href="css/styleNew.css?cache=1697133971114" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/styleExtended.css?cache=1697133971114">
+<link href="smartmenus/css/jquery.smartmenus.bootstrap.css" rel="stylesheet">
+<script type="text/javascript" src="smartmenus/js/jquery.smartmenus.js"></script>
+<script type="text/javascript" src="smartmenus/js/jquery.smartmenus.bootstrap.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+	<div class="navbar-header">
+   	<button type="button" class="pull-left navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+       	<span class="sr-only">Toggle navigation</span>
+        	<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+    	</button>
+	</div>
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    	<ul class="nav navbar-nav" data-smartmenus-id="16971339732642139">
+			<li><a href="ATGRank">Hem </a></li>
+        	<li><a href="Travankan-Manual.pdf" target="_blank">Så funkar det </a>
+			</li><li><a href="ATGRank?Type=showCreateUserNew">Registrera dig </a></li>
+			<li><a href="ATGRank?Type=login">Logga in </a></li>
+		</ul>
+	</div>
+</nav>
+		<script>
+		$(function() {
+			$( '#datepicker' ).datepicker({
+		        onSelect: function(value, date) {
+					window.location = 'ATGRank?Type=showStartPage&RankListDatum=' + value;
+		        },
+				showOn: 'button',
+				buttonImage: 'images/calendar.png',
+				buttonImageOnly: true,
+				buttonText: 'Visa kalender'
+			});
+			$('div.ui-datepicker').css({ fontSize: '12px' });
+			$.datepicker.regional['sv'] = {
+				closeText: 'Stäng',
+				prevText: '&laquo;Förra',
+				nextText: 'Nästa&raquo;',
+				currentText: 'Idag',
+				monthNames: ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December'],
+				monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'],
+				dayNamesShort: ['Sön','Mån','Tis','Ons','Tor','Fre','Lör'],
+				dayNames: ['Söndag','Måndag','Tisdag','Onsdag','Torsdag','Fredag','Lördag'],
+				dayNamesMin: ['Sö','Må','Ti','On','To','Fr','Lö'],
+				weekHeader: 'Ve',
+				dateFormat: 'yymmdd',
+				firstDay: 1,
+				isRTL: false,
+				showMonthAfterYear: false,
+				yearSuffix: ''
+			};
+			$.datepicker.setDefaults($.datepicker.regional['sv']);
+		});
+		</script>
+
+<div class="startmeny-columns-container">
+	<div class="startmeny-columns-left">
+<div style="margin-top:0px; margin-left:20px; width:700px;">
+	<div class="well color-orginal-blue fontTextMedium text-center" style="border: 1px solid #06368E; color:#fff;">
+		<div style="font-size:22px;">Välkommen</div><br>
+		<div style="font-size:15px;line-height: 36px;">Tills vidare är alla tjänster på TravAnkan gratis.</div>
+		<div style="font-size:15px;">Du måste dock vara inloggad för att få tillgång till alla funktioner.</div><br>
+		<div style="font-size:15px;">Denna information tillhandahålls enligt samarbetsavtal med <a style="color:#7f7fff;" href="http://atg.se" target="_blank">ATG</a></div><br>
+	</div>
+	<div class="panel panel-primary">
+		<div class="panel-heading color-dark-blue">
+			<h1 class="panel-title">
+				<span class="fontRubrikRegularUpper" style="font-size:22px;">TravAnkan</span>
+			</h1>
+		</div>
+		<div class="panel-body color-orginal-blue" style="padding-top:10px;">
+			<table class="table" style="width:100%;" border="0">
+				<thead>
+					<tr>
+						<td style="vertical-align:middle;"><a href="ATGRank?Type=showStartPage&amp;RankListDatum=20231011"><i class="glyphicon glyphicon-menu-left" style="color:#fff;"></i></a></td>
+						<td class="fontTextRegular" style="font-size:24px;text-align:center; padding-bottom: 10px;">Torsdag 12 Oktober 2023</td>
+						<td style="vertical-align:middle; text-align:right;"><a href="ATGRank?Type=showStartPage&amp;RankListDatum=20231013"><i class="glyphicon glyphicon-menu-right" style="color:#fff;"></i></a></td>
+					</tr>
+				</thead><thead>
+			</thead></table>
+			<table class="table table-list-blue fontTextMedium" border="0">
+				<thead>
+					<tr>
+						<td>Spelform</td>
+						<td>Bana</td>
+						<td>Spelstopp</td>
+						<td style="text-align:right;"><input type="hidden" id="datepicker" name="pickeddate" class="hasDatepicker"><img class="ui-datepicker-trigger" src="images/calendar.png" alt="Visa kalender" title="Visa kalender"></td>
+					</tr>
+				</thead>
+				<tbody>
+<tr>
+	<td><a href="ATGRank?Type=showRank&amp;PartyShipDID=63119&amp;BetTypesCode=V"><img src="images/v.png" width="85" height="30" border="0"></a></td>
+	<td style="vertical-align:middle;">Australien</td>
+	<td style="vertical-align:middle;">9:22</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="ATGRank?Type=showRank&amp;PartyShipDID=63118&amp;BetTypesCode=V4"><img src="images/v4.png" width="85" height="30" border="0"></a></td>
+	<td style="vertical-align:middle;">Australien</td>
+	<td style="vertical-align:middle;">10:18</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="ATGRank?Type=showRank&amp;PartyShipDID=63079&amp;BetTypesCode=V"><img src="images/v.png" width="85" height="30" border="0"></a></td>
+	<td style="vertical-align:middle;">Berlin</td>
+	<td style="vertical-align:middle;">11:35</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="ATGRank?Type=showRank&amp;PartyShipDID=63078&amp;BetTypesCode=V4"><img src="images/v4.png" width="85" height="30" border="0"></a></td>
+	<td style="vertical-align:middle;">Berlin</td>
+	<td style="vertical-align:middle;">11:35</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="ATGRank?Type=showRank&amp;PartyShipDID=63056&amp;BetTypesCode=V"><img src="images/v.png" width="85" height="30" border="0"></a></td>
+	<td style="vertical-align:middle;">Halmstad</td>
+	<td style="vertical-align:middle;">12:20</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="ATGRank?Type=showRank&amp;PartyShipDID=63054&amp;BetTypesCode=V4"><img src="images/v4.png" width="85" height="30" border="0"></a></td>
+	<td style="vertical-align:middle;">Halmstad</td>
+	<td style="vertical-align:middle;">12:20</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="ATGRank?Type=showRank&amp;PartyShipDID=63052&amp;BetTypesCode=LD"><img src="images/ld.png" width="85" height="30" border="0"></a></td>
+	<td style="vertical-align:middle;">Halmstad</td>
+	<td style="vertical-align:middle;">13:04</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="ATGRank?Type=showRank&amp;PartyShipDID=63055&amp;BetTypesCode=V5"><img src="images/v5.png" width="85" height="30" border="0"></a></td>
+	<td style="vertical-align:middle;">Halmstad</td>
+	<td style="vertical-align:middle;">13:26</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="ATGRank?Type=showRank&amp;PartyShipDID=63053&amp;BetTypesCode=V3"><img src="images/v3.png" width="85" height="30" border="0"></a></td>
+	<td style="vertical-align:middle;">Halmstad</td>
+	<td style="vertical-align:middle;">14:07</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="ATGRank?Type=showRank&amp;PartyShipDID=63121&amp;BetTypesCode=V"><img src="images/v.png" width="85" height="30" border="0"></a></td>
+	<td style="vertical-align:middle;">Enghien</td>
+	<td style="vertical-align:middle;">16:27</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="ATGRank?Type=showRank&amp;PartyShipDID=63120&amp;BetTypesCode=V4"><img src="images/v4.png" width="85" height="30" border="0"></a></td>
+	<td style="vertical-align:middle;">Enghien</td>
+	<td style="vertical-align:middle;">16:27</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="ATGRank?Type=showRank&amp;PartyShipDID=63051&amp;BetTypesCode=V"><img src="images/v.png" width="85" height="30" border="0"></a></td>
+	<td style="vertical-align:middle;">Gävle</td>
+	<td style="vertical-align:middle;">18:20</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="ATGRank?Type=showRank&amp;PartyShipDID=63060&amp;BetTypesCode=V"><img src="images/v.png" width="85" height="30" border="0"></a></td>
+	<td style="vertical-align:middle;">Örebro</td>
+	<td style="vertical-align:middle;">18:53</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="ATGRank?Type=showRank&amp;PartyShipDID=63059&amp;BetTypesCode=V5"><img src="images/v5.png" width="85" height="30" border="0"></a></td>
+	<td style="vertical-align:middle;">Örebro</td>
+	<td style="vertical-align:middle;">18:53</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="ATGRank?Type=showRank&amp;PartyShipDID=63050&amp;BetTypesCode=V64"><img src="images/v64.png" width="85" height="30" border="0"></a></td>
+	<td style="vertical-align:middle;">Gävle</td>
+	<td style="vertical-align:middle;">19:30</td>
+	<td style="text-align:right; vertical-align:middle;"><img src="images/jackpott3.png" width="80" height="14" border="0"></td>
+</tr>
+<tr>
+	<td><a href="ATGRank?Type=showRank&amp;PartyShipDID=63058&amp;BetTypesCode=V4"><img src="images/v4.png" width="85" height="30" border="0"></a></td>
+	<td style="vertical-align:middle;">Örebro</td>
+	<td style="vertical-align:middle;">20:00</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="ATGRank?Type=showRank&amp;PartyShipDID=63049&amp;BetTypesCode=V4"><img src="images/v4.png" width="85" height="30" border="0"></a></td>
+	<td style="vertical-align:middle;">Gävle</td>
+	<td style="vertical-align:middle;">20:14</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="ATGRank?Type=showRank&amp;PartyShipDID=63057&amp;BetTypesCode=V3"><img src="images/v3.png" width="85" height="30" border="0"></a></td>
+	<td style="vertical-align:middle;">Örebro</td>
+	<td style="vertical-align:middle;">20:22</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="ATGRank?Type=showRank&amp;PartyShipDID=63048&amp;BetTypesCode=V3"><img src="images/v3.png" width="85" height="30" border="0"></a></td>
+	<td style="vertical-align:middle;">Gävle</td>
+	<td style="vertical-align:middle;">20:56</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="ATGRank?Type=showRank&amp;PartyShipDID=63047&amp;BetTypesCode=DD"><img src="images/dd.png" width="85" height="30" border="0"></a></td>
+	<td style="vertical-align:middle;">Gävle</td>
+	<td style="vertical-align:middle;">20:56</td>
+	<td>&nbsp;</td>
+</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="panel-footer color-dark-blue  text-center" style="color:#fff; margin-top:0px; border-top:1px solid #03183D;">
+  Denna information tillhandahålls enligt samarbetsavtal med <a style="color:#7f7fff;" href="http://atg.se" target="_blank">ATG</a><br>
+  Samtliga rättigheter i materialet (upphovsrätt eller databasrätt) tillhör <a style="color:#7f7fff;" href="http://atg.se" target="_blank">ATG</a><br>
+<br>Frågor på det? Skicka ett mail till <a style="color:#026eb6;" href="ATGRank?Type=showMailPage">TravAnkan</a>
+		</div>
+	</div>
+		</div>
+	</div>
+</div>
+
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="font-size: 12px;"></div></body></html>
